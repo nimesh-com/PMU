@@ -18,8 +18,12 @@
     @endif
 
     <div class="card shadow border-0 rounded-4">
+<div class="col-2">
+          <a href="/" class="btn btn-primary"> <i class="bi bi-arrow-return-left"></i> Back</a>   
+</div>
         <div class="card-header bg-gradient text-white text-center py-4 rounded-top-4" style="background: linear-gradient(90deg, #4e73df 0%, #1cc88a 100%);">
-            <h4 class="mb-0 fw-bold text-uppercase">Budget Data Entry</h4>
+ 
+        <h4 class="mb-0 fw-bold text-uppercase">Budget Data Entry</h4>
         </div>
 
         <div class="card-body p-4">

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ActivityLog extends Model
 {
     protected $table = 'activity_logs';
-    protected $fillable = ['user_id',  'name', 'budget_code_id', 'allocation_id', 'description'];
+    protected $fillable = ['user_id',  'name', 'budget_code_id', 'allocation_id', 'description', 'system', 'division'];
 
     public function user()
     {
@@ -16,17 +16,17 @@ class ActivityLog extends Model
 
     public function level01()
     {
-        return $this->belongsTo(Level01::class, 'activity_log_id');
+        return $this->hasMany(Level01::class, 'activity_log_id');
     }
 
     public function level02()
     {
-        return $this->belongsTo(Level02::class, 'activity_log_id');
+        return $this->hasMany(Level02::class, 'activity_log_id');
     }
 
     public function level03()
     {
-        return $this->belongsTo(Level03::class, 'activity_log_id');
+        return $this->hasMany(Level03::class, 'activity_log_id');
     }
 
     public function monthlyData()

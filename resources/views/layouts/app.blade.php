@@ -45,6 +45,7 @@
                 <!-- <img src="assets/img/logo.webp" alt=""> -->
                 <h1 class="sitename">PLaning & Monitoring Unit</h1>
             </a>
+            <h5>@if(Auth::check()) <span class="text-primary">Welcome {{Auth::user()->name}}</span> @endif (PMU)</h5>
             @if (Auth::check())
             <a class="btn btn-outline-danger" href="{{route('logout')}}">Logout</a>
             @else

@@ -18,7 +18,7 @@ class MonthlyData extends Model
 
     public function activityLogs()
     {
-        return $this->hasMany(ActivityLog::class);
+        return $this->belongsTo(ActivityLog::class, 'activity_log_id');
     }
 
 }

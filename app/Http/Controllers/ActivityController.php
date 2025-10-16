@@ -55,7 +55,9 @@ class ActivityController extends Controller
             'name' => 'Test Activity',
             'budget_code_id' => $bcode->id,
             'allocation_id' => $Allocation->id,
-            'description' => null
+            'description' => null,
+            'division' => $validatedData['division'],
+            'system' => Auth::user()->system
         ]);
 
 
@@ -116,9 +118,10 @@ class ActivityController extends Controller
         return redirect()->route('activity.create')->with('success', 'Activity and monthly data created successfully!');
     }
 
-    public function report(){
+    public function report()
+    {
 
         $Activitys = ActivityLog::with('level01', 'level02', 'level03')->get();
-        return view('activity.report', compact('Activitys')); 
+        return view('activity.report', compact('Activitys'));
     }
 }
